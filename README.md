@@ -1,3 +1,3 @@
-#Jack's Image Recolouring Thing
+# Jack's Image Recolouring Thing
 
 It replaces colours.
