@@ -5,15 +5,18 @@ from PIL import Image
 oldImagePath = r""
 newImagePath = r""
 
+
 #Replaces any green, red, or yellow pixels (of the specified shades) with blue ones
 def replaceWithBlue():
     #The new RGB values for replaced pixels
     R_new, G_new, B_new = (000, 000, 255)
+    
 
     #The image is opened from the old path by Pillow and its pixel data is loaded
     #The load() function will close the image if it is open when the program is run
     theImage = Image.open(oldImagePath)
     imagePixels = theImage.load()
+    
 
     #Saves two variables using the "size" tuple which contains the image's horizontal and vertical size in pixels
     width, height = theImage.size
@@ -22,22 +25,27 @@ def replaceWithBlue():
     for x in range(width):
         for y in range(height):
             r, g, b = imagePixels[x, y]
-            if (r, g, b) == (255, 000, 000) or (r, g, b) == (000, 255, 000) or (r, g, b) == (255, 255, 000):
+            if (r, g, b) == (255, 000, 000) or (r, g, b) == (000, 255, 000) 
+            or (r, g, b) == (255, 255, 000):
                 imagePixels[x, y] = (R_new, G_new, B_new)
+                
     
     #Saves the image at the path specified by the newImagePath variable
     theImage.save(newImagePath)
+    
 
 
  #Replaces any green, blue, or yellow pixels (of the specified shades) with red ones
 def replaceWithRed():
     #The new RGB values for replaced pixels
     R_new, G_new, B_new = (255, 000, 000)
+    
 
     #The image is opened from the old path by Pillow and its pixel data is loaded
     #The load() function will close the image if it is open when the program is run
     theImage = Image.open(oldImagePath)
     imagePixels = theImage.load()
+    
 
     #Saves two variables using the "size" tuple which contains the image's horizontal and vertical size in pixels
     width, height = theImage.size
@@ -46,8 +54,10 @@ def replaceWithRed():
     for x in range(width):
         for y in range(height):
             r, g, b = imagePixels[x, y]
-            if (r, g, b) == (000, 000, 255) or (r, g, b) == (000, 255, 000) or (r, g, b) == (255, 255, 000):
+            if (r, g, b) == (000, 000, 255) or (r, g, b) == (000, 255, 000) 
+            or (r, g, b) == (255, 255, 000):
                 imagePixels[x, y] = (R_new, G_new, B_new)
+                
     
     #Saves the image at the path specified by the newImagePath variable
     theImage.save(newImagePath)
@@ -70,7 +80,8 @@ def replaceWithGreen():
     for x in range(width):
         for y in range(height):
             r, g, b = imagePixels[x, y]
-            if (r, g, b) == (000, 000, 255) or (r, g, b) == (255, 000, 000) or (r, g, b) == (255, 255, 000):
+            if (r, g, b) == (000, 000, 255) or (r, g, b) == (255, 000, 000) 
+            or (r, g, b) == (255, 255, 000):
                 imagePixels[x, y] = (R_new, G_new, B_new)
     
     #Saves the image at the path specified by the newImagePath variable
@@ -81,11 +92,13 @@ def replaceWithGreen():
 def replaceWithYellow():
     #The new RGB values for replaced pixels
     R_new, G_new, B_new = (255, 255, 000)
+    
 
     #The image is opened from the old path by Pillow and its pixel data is loaded
     #The load() function will close the image if it is open when the program is run
     theImage = Image.open(oldImagePath)
     imagePixels = theImage.load()
+    
 
     #Saves two variables using the "size" tuple which contains the image's horizontal and vertical size in pixels
     width, height = theImage.size
@@ -94,8 +107,10 @@ def replaceWithYellow():
     for x in range(width):
         for y in range(height):
             r, g, b = imagePixels[x, y]
-            if (r, g, b) == (000, 000, 255) or (r, g, b) == (255, 000, 000) or (r, g, b) == (000, 255, 000):
+            if (r, g, b) == (000, 000, 255) or (r, g, b) == (255, 000, 000) 
+            or (r, g, b) == (000, 255, 000):
                 imagePixels[x, y] = (R_new, G_new, B_new)
+                
 
     #Saves the image at the path specified by the newImagePath variable
     theImage.save(newImagePath)
